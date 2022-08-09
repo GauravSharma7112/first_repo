@@ -1,0 +1,86 @@
+<div class="container mb20 mt20">
+  <button routerLink="/admin/add-quiz" mat-raised-button color="primary">
+    Add New Quiz
+  </button>
+</div>
+<mat-card class="mt10 mr20 ml20" *ngFor="let q of quizzes" layout="row" layout-sm="column" layout-align="end center" layout-wrap>
+  
+  <mat-card-header >
+    <div mat-card-avatar class="example-header-image"></div>
+    <h2>
+      {{ q.title }}
+    </h2>
+
+
+    <div class="example-button-container ml20">
+      <button mat-mini-fab color="primary" [routerLink]="'/admin/view-questions/' + q.qId + '/' + q.title">
+        <mat-icon>add circle</mat-icon>
+      </button>
+    </div>
+
+    
+  
+
+    <!-- <p>{{ q.description }}</p> -->
+    <!-- <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+  <mat-icon mat-list-icon></mat-icon> 
+   -->
+  
+  <!-- <mat-card-action> -->
+  </mat-card-header>
+  <h3></h3>
+  <mat-card-content>
+
+    <button color="primary"
+      [routerLink]="'/admin/quiz/' + q.qId"
+      mat-button
+      color="primary"
+      class="ml20"
+    >
+      Update
+    </button>
+    <!-- <button mat-flat-button color="primary" class="ml20">Attempts</button> -->
+
+    <button
+      mat-button color="warn"
+      
+      class="ml10" 
+      (click)="deleteQuiz(q.qId)"
+    >
+      Delete
+    </button>
+  
+    <button mat-button class="ml20">
+      Max Marks: {{ q.maxMarks }}
+    </button>
+    <button mat-button class="ml20">
+      Questions: {{ q.numberOfQuestions }}
+    </button>
+    
+  <!-- </mat-card-action> -->
+    <!-- <mat-card-subtitle>
+      {{ q.category.title }}
+    </mat-card-subtitle> -->
+
+    
+</mat-card-content>
+</mat-card>
+
+
+
